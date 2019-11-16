@@ -1,7 +1,7 @@
 <nav class="mb-5">
     <ol class="breadcrumb">
         <li class="breadcrumb-item"><a routerLink="/">Home</a></li>
-        <li class="breadcrumb-item"><a routerLink="/categories">Categorias</a></li>
+        <li class="breadcrumb-item"><a routerLink="/entries">Lançamentos</a></li>
         <li class="breadcrumb-item active">{{pageTitle}}</li>
     </ol>
 </nav>
@@ -13,16 +13,16 @@
         </h1>
     </div>
     <div class="col-md-3">
-        <a routerLink="/categories" class="btn btn-light float-right">
+        <a routerLink="/entries" class="btn btn-light float-right">
             << Voltar </a>
     </div>
 </div>
 
-<form [formGroup]="categoryForm" (submit)="submitForm()">
+<form [formGroup]="entryForm" (submit)="submitForm()">
 
     <div class="card">
         <div class="card-header">
-            Informações sobre a categoria
+            Informações sobre o lançamento
         </div>
 
         <div class="card-body">
@@ -31,9 +31,9 @@
                     <label for="name">Nome</label>
                     <input type="text" class="form-control" id="name" formControlName="name">
 
-                    <div class="text-danger" *ngIf="categoryForm.get('name').invalid && categoryForm.get('name').touched ">
-                        <div *ngIf="categoryForm.get('name').errors.required ">dado obrigatório</div>
-                        <div *ngIf="categoryForm.get('name').errors.minlength">deve ter no mínimo 2 caracteres</div>
+                    <div class="text-danger" *ngIf="entryForm.get('name').invalid && entryForm.get('name').touched ">
+                        <div *ngIf="entryForm.get('name').errors.required ">dado obrigatório</div>
+                        <div *ngIf="entryForm.get('name').errors.minlength">deve ter no mínimo 4 caracteres</div>
                     </div>
                 </div>
 
@@ -52,7 +52,7 @@
         </ul>
     </div>
 
-    <button [disabled]="submittingForm || categoryForm.invalid" type="submit" class="btn btn-primary btn-lg float-right mt-3">
+    <button [disabled]="submittingForm || entryForm.invalid" type="submit" class="btn btn-primary btn-lg float-right mt-3">
       Salvar
     </button>
 </form>
