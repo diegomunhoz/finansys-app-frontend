@@ -62,8 +62,8 @@ export class EntryFormComponent implements OnInit, AfterContentChecked {
   ngOnInit() {
     this.setCurrentAction()
     this.buildEntryForm()
-    this.loadCategories()
     this.loadEntry()
+    this.loadCategories()
   }
 
   ngAfterContentChecked() {
