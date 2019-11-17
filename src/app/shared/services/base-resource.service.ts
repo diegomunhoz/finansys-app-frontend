@@ -77,7 +77,4 @@ export abstract class BaseResourceService<T extends BaseResourceModel> {
     return throwError(error)
   }
 
-
-
-
 }
